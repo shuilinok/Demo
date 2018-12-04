@@ -20,7 +20,7 @@ class SearchCourseCOItem: NSObject {
 class SearchCourseRectItem: SearchCourseCOItem {
 
     var title : NSMutableAttributedString = NSMutableAttributedString(string: "")
-    var desc : NSMutableAttributedString = NSMutableAttributedString(string: "")
+    var desc : NSAttributedString?
     var imageUrl : String = ""
     var titleHeight : CGFloat = 0.0
     var descHeight : CGFloat = 0.0
@@ -37,28 +37,20 @@ class SearchCourseRectItem: SearchCourseCOItem {
             self.title.addAttributes(attributes, range: NSRange.init(location: 0, length: info.name!.count))
         }
         
-        if info.org_name != nil
-        {
-            self.desc = NSMutableAttributedString(string: info.org_name!)
-            
-            //设置样式
-            let attributes = [NSAttributedStringKey.foregroundColor: UIColor.darkGray,
-                              NSAttributedStringKey.font: UIFont.systemFont(ofSize: 13)] as [NSAttributedStringKey : Any]
-            self.desc.addAttributes(attributes, range: NSRange.init(location: 0, length: info.org_name!.count))
-        }
+        self.desc = self.createRichDesc(info: info)
         
         self.imageUrl = exString(info.thumbImageUrl)
         
         //计算标题文本高度
-        let maxSize = CGSize(width: width, height:CGFloat.greatestFiniteMagnitude)
-        
-        let titleRect = self.title.boundingRect(with: maxSize, options: .usesLineFragmentOrigin, context: nil)
-        let titleHeight = ceil(titleRect.size.height) ;
+        let titleHeight = self.title.heightForWidth(width: width)
         self.titleHeight = titleHeight
         
         //计算描述文本高度
-        let descRect = self.desc.boundingRect(with: maxSize, options: .usesLineFragmentOrigin, context: nil)
-        let descHeight = ceil(descRect.size.height);
+        var descHeight : CGFloat = 0.0
+        if let desc = self.desc {
+            
+            descHeight = desc.heightForWidth(width: width)
+        }
         self.descHeight = descHeight
         
         //print("titleHeight : \(titleHeight)")
@@ -66,6 +58,16 @@ class SearchCourseRectItem: SearchCourseCOItem {
         //计算整个单元格尺寸
         let height = width * 27.0 / 40.0 + titleHeight + descHeight + 30
         self.size = CGSize(width: width, height: height)
+    }
+    
+    
+    func createRichDesc(info : SearchCourseInfo) -> NSAttributedString? {
+        
+        let builder = CourseCellRichDescBuilder()
+        builder.appendText(aText: info.org_name)
+        builder.appendIcon(icon: UIImage(named: "order_send_time"))
+        builder.appendText(aText: "丰富。")
+        return builder.text
     }
 }
 
