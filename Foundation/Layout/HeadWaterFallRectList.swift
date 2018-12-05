@@ -22,6 +22,12 @@ class HeadWaterFallRectList: WaterFallRectList {
         return y
     }
     
+    override func reset() {
+        super .reset()
+        
+        self.summaryHeights.removeAll()
+    }
+    
     func appendSummaryRect(itemHeight:CGFloat)
     {
         let height = self.totalSummaryHeight()
