@@ -66,7 +66,12 @@ class SearchCourseRectItem: SearchCourseCOItem {
         let builder = CourseCellRichDescBuilder()
         builder.appendText(aText: info.org_name)
         builder.appendIcon(icon: UIImage(named: "order_send_time"))
-        builder.appendText(aText: "丰富。")
+        builder.appendText(aText: "丰富。\n")
+        builder.appendTag(aText: "超重")
+        builder.appendText(aText: " ")
+        builder.appendTag(aText: "走高速")
+        builder.appendText(aText: "货车")
+        
         return builder.text
     }
 }

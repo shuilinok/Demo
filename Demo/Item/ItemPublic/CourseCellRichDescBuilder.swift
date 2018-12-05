@@ -69,7 +69,7 @@ class CourseCellRichDescBuilder: NSObject {
         //新建label
         let font = UIFont.systemFont(ofSize: 12)
         let height : CGFloat = 16.0
-        let width = text.widthForFont(aFont: font)
+        let width = text.widthForFont(aFont: font) + 22
         let label = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: width, height: height))
         label.backgroundColor = UIColor.white
         label.textColor = UIColor.blue
@@ -83,7 +83,34 @@ class CourseCellRichDescBuilder: NSObject {
         label.text = text;
         
         //把label转换成图片
+        let image = label.createImage()
         
         //追加图片
+        self.appendTagImage(image: image, size: CGSize(width: width, height: height))
+    }
+    
+    //追加标签图片
+    func appendTagImage(image : UIImage?, size : CGSize) {
+        
+        if image == nil {
+            return
+        }
+        
+        let attach = NSTextAttachment.init()
+        attach.image = image
+        attach.bounds = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        let attachString = NSAttributedString.init(attachment: attach)
+        
+        let subString = NSMutableAttributedString()
+        subString.append(attachString)
+        
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 2
+        style.alignment = NSTextAlignment.left
+        
+        let attribute = [NSAttributedStringKey.paragraphStyle : style]
+        subString.addAttributes(attribute, range: NSRange(location: 0, length: subString.length))
+        
+        self.text.append(subString)
     }
 }

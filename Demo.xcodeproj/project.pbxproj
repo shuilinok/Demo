@@ -18,6 +18,7 @@
 		444117DB219D07BF0059EEAB /* EditOrderRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444117DA219D07BF0059EEAB /* EditOrderRequest.swift */; };
 		444117DF219D08260059EEAB /* EditOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444117DE219D08260059EEAB /* EditOrder.swift */; };
 		444A4F78213E734E00FBCEFD /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 444A4F77213E734E00FBCEFD /* Alamofire.framework */; };
+		4455F19521B7F17300531AD0 /* ViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4455F19421B7F17300531AD0 /* ViewHelper.swift */; };
 		44594B33216DE850003ECE5D /* FCFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44594B32216DE850003ECE5D /* FCFlowLayout.swift */; };
 		44594B35216DF1E6003ECE5D /* WaterFallRectList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44594B34216DF1E6003ECE5D /* WaterFallRectList.swift */; };
 		445A96582148BAC1002B06C7 /* AddCourseKeyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A96572148BAC1002B06C7 /* AddCourseKeyRequest.swift */; };
@@ -119,6 +120,7 @@
 		444117DE219D08260059EEAB /* EditOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditOrder.swift; sourceTree = "<group>"; };
 		444A4F75213E72E100FBCEFD /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		444A4F77213E734E00FBCEFD /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4455F19421B7F17300531AD0 /* ViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHelper.swift; sourceTree = "<group>"; };
 		44594B32216DE850003ECE5D /* FCFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCFlowLayout.swift; sourceTree = "<group>"; };
 		44594B34216DF1E6003ECE5D /* WaterFallRectList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterFallRectList.swift; sourceTree = "<group>"; };
 		445A96572148BAC1002B06C7 /* AddCourseKeyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCourseKeyRequest.swift; sourceTree = "<group>"; };
@@ -557,6 +559,7 @@
 				44C94AA021424A41003DDA45 /* StringHelper.swift */,
 				44811381214F9B8500FAE54C /* ErrorExtension.swift */,
 				446C32872175C010008C621D /* ColorHelper.swift */,
+				4455F19421B7F17300531AD0 /* ViewHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -812,6 +815,7 @@
 				442B1116216F3DA700A39FA2 /* SearchCourseHeaderView.swift in Sources */,
 				44811372214F579100FAE54C /* RootViewController.swift in Sources */,
 				445A967121490897002B06C7 /* CourseKeyEntity+CoreDataClass.swift in Sources */,
+				4455F19521B7F17300531AD0 /* ViewHelper.swift in Sources */,
 				445A96582148BAC1002B06C7 /* AddCourseKeyRequest.swift in Sources */,
 				445A967221490897002B06C7 /* CourseKeyEntity+CoreDataProperties.swift in Sources */,
 				445E6B1C2151326200FD3EF1 /* DemoErrorDefine.swift in Sources */,
