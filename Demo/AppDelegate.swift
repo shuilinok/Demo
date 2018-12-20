@@ -24,6 +24,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window?.rootViewController = rootViewController
         
+        /*
+        //原始值
+        let number = NSNumber(value: 12345.00)
+        
+        //创建一个NumberFormatter对象
+        let numberFormatter = NumberFormatter()
+        //设置number显示样式
+        numberFormatter.numberStyle = .decimal  // 小数形式
+        numberFormatter.usesGroupingSeparator = true //设置用组分隔
+        numberFormatter.groupingSeparator = "," //分隔符号
+        numberFormatter.groupingSize = 3  //分隔位数
+        numberFormatter.minimumFractionDigits = 2 //设置小数点后最少2位（不足补0）
+        //格式化
+        let format = numberFormatter.string(from: number)!
+        */
+        
         return true
     }
 

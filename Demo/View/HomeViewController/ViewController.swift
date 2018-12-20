@@ -248,8 +248,8 @@ class ViewController: UIViewController {
     
     @objc func onClickOther()
     {
-        //let vc = DemoWebViewController()
-        let vc = TextViewController()
+        let vc = DemoWebViewController()
+        //let vc = TextViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

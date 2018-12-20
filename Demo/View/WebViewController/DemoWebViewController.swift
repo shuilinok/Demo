@@ -41,10 +41,23 @@ class DemoWebViewController: UIViewController , WKScriptMessageHandler {
     
     func loadWeb()
     {
-        if let url = Bundle.main.url(forResource: "test", withExtension: "html") {
-            self.webView?.loadFileURL(url, allowingReadAccessTo: url)
-
-        }
+        var config = WKWebViewConfiguration()
+//        config.isShowScrollIndicator = false
+//        config.isProgressHidden = false
+//        webView.webConfig = config
+        
+        let url = URL(string: "https://openapi.bestsign.info/openapi/v2/dist_v3/index.html#/donePage?developerId=1939032504874828386&data=FZiLywyKAh9Xywiiydj6jIf5nYLXnYj1ncr4mYr4nIHYpczJkdiIA250DNeICfKLjIPJnsv0mczXpcrZmcbWncbXncbWjJXJCNKKC1q5DhvJpJiXDNu2Bxu3jJXJywGXBwiKrwrJpJjWmsr1nIfYnIj0jJXJygaOjIPJpszJkdiYBxCVywjJpJjWpczXnsLWnsjXnJjTjMe1zxWOCgLJpJjWncbJEr%3D%3D")
+        
+        let request = URLRequest(url: url!)
+        
+        self.webView?.load(request)
+        
+        
+        
+//        if let url = Bundle.main.url(forResource: "test", withExtension: "html") {
+//            self.webView?.loadFileURL(url, allowingReadAccessTo: url)
+//
+//        }
     }
 
     /*
